@@ -1,0 +1,24 @@
+.added_keyword {
+    display: flex;
+    justify-content: center;
+    padding: 4px 5px;
+    border: 1px solid lightgray;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.keyword_delete {
+    cursor: pointer;
+}
+.keyword_delete > button {
+    outline: none;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    margin-top: -5px;
+    margin-left: 10px;
+    text-align: center;
+}
+.keyword_delete > button:hover {
+    cursor: pointer;
+}

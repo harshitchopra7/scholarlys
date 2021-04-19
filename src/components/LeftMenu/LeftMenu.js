@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LeftMenu.css';
 import Avatar from '@material-ui/core/Avatar';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
@@ -6,15 +6,64 @@ import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { Link, useHistory } from 'react-router-dom';
+import { useEffect } from 'react';
+import db from '../../firebase';
+import firebase from 'firebase';
+import AddedKeyword from './AddedKeyword';
 
 function LeftMenu() {
 
     const history = useHistory();
 
-    const createFeed = () => {
-        history.push("/feeds");
+    const [keyword, setKeyword] = useState([]);
+    const [input, setInput] = useState('');
+
+    // const [feed, setFeed] = useState([]);
+    // const [feedInput, setFeedInput] = useState('');
+
+    // when the add loads, we need to listen to database and fetch new keywords as they get added/removed
+    useEffect(() => {
+        // this code here fires when the component loads
+        db.collection('keywords')  // access the keywords collection
+            .orderBy('timestamp', 'desc') // order keywords by timeStamps
+            .onSnapshot(snapshot =>    // take a snapshot when any updation, creation, deletion happens and return and then we can do anything with it
+                {
+                    console.log(snapshot.docs.map(doc => doc.data().keyword));
+                    setKeyword(snapshot.docs.map(  // this line fires off when any changes or updations are made to the firebase database
+                        doc => 
+                        ({
+                            id: doc.id,
+                            keyword: doc.data().keyword
+                        })
+                    ))  
+                }
+            )
+
+    }, []); 
+
+    const addKeyword = (event) => {
+        // this will fire off when we click add keyword button 
+        event.preventDefault(); // will prevevent refreshing the page
+        console.log("Working");
+
+        // adds keyword to database
+        db.collection("keywords").add({
+            keyword: input,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+
+        // setKeyword([...keyword, input]); // append the new keyword to the existing array of keyword
+        setInput(''); // clear up the input after clicking the add keyword button
     }
 
+    const createFeed = (e) => {
+        e.preventDefault();
+        alert("Feed Created");
+        toggler();
+    }
+
+
+    // toggling the pop up aftetr clicking create feed button
     const toggler = () => {
         var blurrr = document.getElementById("blurrr");
         blurrr.classList.toggle('active');
@@ -30,8 +79,9 @@ function LeftMenu() {
                     <Avatar src='' style={{ width: '100px', height: '100px' }} />
                     <p>Harshit Chopra</p>
                 </div>
-
+                
                 <Link className="text_decoration" to="/feeds">
+                    
                     <div className="option">
                         <div>
                             <MenuBookIcon style={{color: '#012169'}} />
@@ -83,10 +133,28 @@ function LeftMenu() {
                     </p>
                 </div>
                 <div className="inputss">
-                    <input className="input_ff" placeholder="Feed Name" />
+                    <input 
+                        className="input_ff" 
+                        placeholder="Feed Name"
+                        // value={feedInput}
+                        // onChange={e => setFeedInput(e.target.value)} 
+                    />
+
                     <div className="input_keyy">
-                        <input className="input_kk" placeholder="Add research keywords" />
-                        <button>Add Keyword</button>
+                        <input 
+                            className="input_kk" 
+                            placeholder="Add research keywords"
+                            value={input}
+                            onChange={event => setInput(event.target.value)}
+                        />
+                        <button onClick={addKeyword}>Add Keyword</button>
+                    </div>
+                </div>
+                <div>
+                    <div className="keyword_added">
+                        {keyword.map(({id, keyword}) => (
+                            <AddedKeyword id={id} keyword={keyword} />
+                        ))}
                     </div>
                 </div>
                 <div className="no_addfeedd">
