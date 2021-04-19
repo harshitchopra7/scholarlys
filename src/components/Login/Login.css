@@ -1,0 +1,35 @@
+.logingoogle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lg_img {
+    width: 30px;
+    margin-right: 10px;
+}
+.lg_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    background-color: white;
+    outline: none;
+    border-radius: 25px;
+    font-size: 20px;
+    border: 0.5px solid grey;
+    text-decoration: none;
+    padding: 4px 5px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: lightgreen;
+}
+.lg_button:hover {
+    padding: 6px 8px;
+}
+.text-decoration {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: #4285F4;
+}
