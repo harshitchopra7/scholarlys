@@ -1,0 +1,134 @@
+.leftmenu {
+    margin-top: 10px;
+    margin-left: 150px;
+    width: 150px;
+    height: 400px;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5px;
+    position: fixed;
+}
+.menu_top > p {
+    margin-top: 10px;
+    text-align: center;
+}
+.menu_options {
+    margin-top: 20px;
+    cursor: pointer;
+}
+.option {
+    display: flex;
+    margin-top: 7px;
+    color: black;
+}
+.text_decoration {
+    text-decoration: none;
+}
+.option_p {
+    margin-left: 5px;
+}
+.f {
+    margin-top: 430px;
+    margin-left: 165px;
+    position: fixed;
+}
+/* Popup css start*/
+#popuppp {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 450px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.30);
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    padding: 20px;
+}
+#popuppp.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+.leftmenu#blurrr.active {
+    filter: blur(4px);
+    pointer-events: none;
+    user-select: none;
+}
+.cross_mainnn {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+.crossss {
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: auto;
+}
+.welcome_mainnn {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcomeee {
+    font-size: 32px;
+}
+.login_googleee {
+    margin-top: 50px;
+}
+.inputss {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.input_ff {
+    width: 400px;
+    font-size: 16px;
+    padding: 5px;
+}
+.input_kk {
+    width: 300px;
+    margin: 20px 0;
+    font-size: 16px; 
+    padding: 5px;
+}
+.input_keyy > button {
+    margin-left: 20px;
+    font-size: 15px;
+    padding: 4px 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #318ce7;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+}
+.input_keyy > button:hover {
+    font-size: 16px;
+}
+.no_addfeedd {
+    display: flex;
+    margin-top: 160px;
+    justify-content: center;
+}
+.no_addfeedd > button {
+    margin-left: 20px;
+    font-size: 20px;
+    padding: 4px 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #318ce7;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+}
+.no_addfeedd > button:hover {
+    font-size: 21px;
+}

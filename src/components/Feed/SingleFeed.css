@@ -1,0 +1,24 @@
+.singlefeed {
+    border: 0.1rem solid lightgray;
+    margin-top: 10px;
+    padding: 2px 4px;
+}
+.singlefeed:hover {
+    cursor: pointer;
+}
+.sf_title {
+    color: #012169;
+    font-size: 16px;
+    font-weight: 500;
+}
+.sf_keyword {
+    font-weight: 400;
+}
+.key_book {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+.bookmark {
+    margin-left: auto;
+}

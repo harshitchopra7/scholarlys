@@ -1,0 +1,15 @@
+.feed {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 330px;
+    width: 670px;
+}
+.most_rel {
+    font-size: 18px;
+    font-weight: bold;
+}
+.today {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}

@@ -1,0 +1,10 @@
+.navbar {
+    margin: 0 10%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+}
+.hr {
+    border: 1px solid lightgray;
+}
