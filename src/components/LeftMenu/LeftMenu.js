@@ -14,6 +14,7 @@ import { useSelector } from 'react-redux';
 import { logout, selectUser } from '../features/userSlice';
 import { auth } from '../../firebase';
 import { useDispatch } from 'react-redux';
+import AddedFeeds from './AddedFeeds';
 
 
 
@@ -34,6 +35,8 @@ function LeftMenu() {
 
     const [keyword, setKeyword] = useState([]);
     const [input, setInput] = useState('');
+    const [feed, setFeed] = useState([]);
+    const [feedInput, setFeedInput] = useState('');
 
     // const [feed, setFeed] = useState([]);
     // const [feedInput, setFeedInput] = useState('');
@@ -56,6 +59,18 @@ function LeftMenu() {
                 }
             )
 
+            db.collection('feeds').orderBy('timestamp', 'desc')
+            .onSnapshot(snapshot => {
+                console.log((snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    feed: doc.data().feed
+                }))));
+                setFeed(snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    feed: doc.data().feed
+                })))
+            })
+
     }, []); 
 
     const addKeyword = (event) => {
@@ -75,13 +90,21 @@ function LeftMenu() {
 
     const createFeed = (e) => {
         e.preventDefault();
+        
+        db.collection('feeds').add({
+            feed: feedInput,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+
         alert("Feed Created");
+        setFeedInput('');
         toggler();
     }
 
 
     // toggling the pop up aftetr clicking create feed button
     const toggler = () => {
+        setFeedInput('');
         var blurrr = document.getElementById("blurrr");
         blurrr.classList.toggle('active');
         var popuppp = document.getElementById("popuppp");
@@ -96,18 +119,15 @@ function LeftMenu() {
                     <Avatar src={user.photoURL} style={{ width: '100px', height: '100px' }} />
                     <p>{user.displayName}</p>
                 </div>
+
+                {feed.map(({id, feed}) => (
+                    <AddedFeeds id={id} feed={feed} feedUrl="/feeds" />
+                ))}
                 
-                <Link className="text_decoration" to="/feeds">
+                {/* <Link className="text_decoration" to="/feeds">
                     
-                    <div className="option">
-                        <div>
-                            <MenuBookIcon style={{color: '#012169'}} />
-                        </div>
-                        <div className="option_p">
-                            <p> Feed 1</p>
-                        </div>
-                    </div>
-                </Link>
+                    <AddedFeeds />
+                </Link> */}
 
                 <div className="menu_options">
                     <div className="option" onClick={toggler}>
@@ -153,8 +173,8 @@ function LeftMenu() {
                     <input 
                         className="input_ff" 
                         placeholder="Feed Name"
-                        // value={feedInput}
-                        // onChange={e => setFeedInput(e.target.value)} 
+                        value={feedInput}
+                        onChange={e => setFeedInput(e.target.value)} 
                     />
 
                     <div className="input_keyy">

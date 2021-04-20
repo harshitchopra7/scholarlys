@@ -6,9 +6,14 @@
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     padding: 10px 5px;
     position: fixed;
+}
+.menu_top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .menu_top > p {
     margin-top: 10px;
@@ -17,6 +22,7 @@
 .menu_options {
     margin-top: 20px;
     cursor: pointer;
+    padding: 0 10px;
 }
 .option {
     display: flex;
