@@ -1,5 +1,4 @@
 .nokeywords {
-    margin-top: 10px;
     margin-left: 350px;
     width: 650px;
     display: flex;
@@ -11,6 +10,9 @@
     font-size: 20px;
 }
 .nokeywords > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 40px;
     font-size: 20px;
     padding: 4px 10px;
@@ -21,9 +23,7 @@
     border: none;
     border-radius: 7px;
 }
-.nokeywords > button:hover {
-    font-size: 21px;
-}
+
 
 /* Popup css start*/
 #popupp {

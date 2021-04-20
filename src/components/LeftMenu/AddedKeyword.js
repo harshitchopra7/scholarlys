@@ -1,6 +1,6 @@
 import React from 'react';
 import './AddedKeyword.css';
-import db from '../../firebase';
+import { db } from '../../firebase';
 
 function AddedKeyword ({ id, keyword })  {
 

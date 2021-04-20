@@ -3,7 +3,7 @@ import './Login.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { auth, provider } from '../../firebase';
 import { login, selectUser } from '../features/userSlice';
-import google from '../images/google.png';
+import google from '../images/google.jpg';
 import { Link, useHistory } from 'react-router-dom';
 
 function Login() {
@@ -11,8 +11,6 @@ function Login() {
     const dispatch = useDispatch();
 
     const history = useHistory();
-
-    
 
     const signIn = () => {
         auth.signInWithPopup(provider) 
@@ -24,7 +22,9 @@ function Login() {
                 uid: user.uid
             }))
         }).catch(error => alert(error.message));
+        alert("Successful");
     }
+
     
     return (
         <div className="logingoogle">

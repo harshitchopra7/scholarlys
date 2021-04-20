@@ -7,13 +7,30 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import { Link, useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
-import db from '../../firebase';
+import { db } from '../../firebase';
 import firebase from 'firebase';
 import AddedKeyword from './AddedKeyword';
+import { useSelector } from 'react-redux';
+import { logout, selectUser } from '../features/userSlice';
+import { auth } from '../../firebase';
+import { useDispatch } from 'react-redux';
+
+
 
 function LeftMenu() {
 
     const history = useHistory();
+    const dispatch = useDispatch()
+
+	const user = useSelector(selectUser);
+
+	const signOut=()=>{
+		auth.signOut().then(()=>{
+			dispatch(logout())
+		})
+        alert("Logged out");
+        history.push("/");
+	}
 
     const [keyword, setKeyword] = useState([]);
     const [input, setInput] = useState('');
@@ -76,8 +93,8 @@ function LeftMenu() {
         <div>
             <div className="leftmenu" id="blurrr">
                 <div className="menu_top">
-                    <Avatar src='' style={{ width: '100px', height: '100px' }} />
-                    <p>Harshit Chopra</p>
+                    <Avatar src={user.photoURL} style={{ width: '100px', height: '100px' }} />
+                    <p>{user.displayName}</p>
                 </div>
                 
                 <Link className="text_decoration" to="/feeds">
@@ -113,7 +130,7 @@ function LeftMenu() {
                         </div>
                     </Link>
 
-                    <div className="option">
+                    <div onClick={signOut} className="option">
                         <div>
                             <ExitToAppIcon style={{color: '#012169'}} />
                         </div>

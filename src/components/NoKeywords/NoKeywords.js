@@ -1,10 +1,12 @@
 import React from 'react';
 import './NoKeywords.css';
+import LeftMenu from '../LeftMenu/LeftMenu';
 import Avatar from '@material-ui/core/Avatar';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import { Link } from 'react-router-dom';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 function NoKeywords() {
 
@@ -19,12 +21,14 @@ function NoKeywords() {
         <div>
         <div className="no_full" id="blurr">
 
-            <div className="leftmenu">
-                <div className="menu_top">
+            <LeftMenu />
+
+            {/* <div className="leftmenu"> */}
+                {/* <div className="menu_top">
                     <Avatar src='' style={{ width: '100px', height: '100px' }} />
                     <p>Harshit Chopra</p>
-                </div>
-                <div className="menu_options">
+                </div> */}
+                {/* <div className="menu_options">
                     <div className="option" onClick={toggler}>
                         <div>
                             <AddCircleOutlineIcon style={{color: '#012169'}} />
@@ -53,13 +57,13 @@ function NoKeywords() {
                             <p>Logout</p>
                         </div>
                     </div>
-                </div>
-                <p className="foote">@2021 Scholarlys</p>
-            </div>
+                </div> */}
+                {/* <p className="foote">@2021 Scholarlys</p>
+            </div> */}
             <div className="nokeywords">
                 <p>Create your first feed and add your search interests </p>
-                <button onClick={toggler}>
-                    Create Feed
+                <button>
+                    <ArrowBackIcon /> Click on create Feed
                 </button>
             </div>
 

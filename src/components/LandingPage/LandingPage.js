@@ -2,6 +2,7 @@ import React from 'react';
 import './LandingPage.css';
 import vid1 from '../video/Scholarlys_Demo.mp4';
 import vid2 from '../video/v2.mp4';
+import Login from '../Login/Login';
 
 function LandingPage() {
 
@@ -55,7 +56,7 @@ function LandingPage() {
                     <p className="welcome">Welcome to Scholarlys</p>
                 </div>
                 <div className="login_google">
-                    <button>Login Button</button>
+                    <Login />
                 </div>
             </div>
 

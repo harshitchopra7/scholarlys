@@ -8,54 +8,80 @@ import Meme from './components/Meme/Meme';
 import Feed from './components/Feed/Feed';
 import Bookmarks from './components/Bookmarks/Bookmarks';
 import Content from './components/Content/Content';
+import { useSelector, useDispatch } from 'react-redux';
+import { login, selectUser } from './components/features/userSlice';
+import { auth } from './firebase';
+import { useEffect } from 'react';
 
 function App() {
-  
+
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        dispatch(login({
+          displayName: user.displayName,
+          mail: user.email,
+          photoURL: user.photoURL
+        }))
+      }
+    })
+  }, [])
+
   return (
-    <div className="App">
+    
       <Router>
 
-        <Route exact path="/">
-          <LandingPage />
-        </Route>
+        {(!user) ? (
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+        )
+          : (
+            <div className="App">
+              <Route path="/no-keywords">
+                <Navbar />
+                <div className="align">
+                  <NoKeywords />
+                  <Meme />
+                </div>
+              </Route>
 
-        <Route path="/no-keywords">
-          <Navbar />
-          <div className="align">
-            <NoKeywords />
-            <Meme />
-          </div>
-        </Route>
+              <Route path="/feeds">
+                <Navbar />
+                <div className="align">
+                  <LeftMenu />
+                  <Feed />
+                  <Meme />
+                </div>
+              </Route>
 
-        <Route path="/feeds">
-          <Navbar />
-          <div className="align">
-            <LeftMenu />
-            <Feed />
-            <Meme />
-          </div>
-        </Route>
+              <Route path="/bookmarks">
+                <Navbar />
+                <div className="align">
+                  <LeftMenu />
+                  <Bookmarks />
+                  <Meme />
+                </div>
+              </Route>
 
-        <Route path="/bookmarks">
-          <Navbar />
-          <div className="align">
-            <LeftMenu />
-            <Bookmarks />
-            <Meme />
-          </div>
-        </Route>
-
-        <Route path="/content">
-          <Navbar />
-          <div className="align">
-            <LeftMenu />
-            <Content />
-            <Meme />
-          </div>
-        </Route>
+              <Route path="/content">
+                <Navbar />
+                <div className="align">
+                  <LeftMenu />
+                  <Content />
+                  <Meme />
+                </div>
+              </Route>
+              </div>
+           )
+          
+         }
 
       </Router>
-    </div>
+    
   );
 }
 
