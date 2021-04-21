@@ -3,8 +3,19 @@ import './LandingPage.css';
 import vid1 from '../video/Scholarlys_Demo.mp4';
 import vid2 from '../video/v2.mp4';
 import Login from '../Login/Login';
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
 
 function LandingPage() {
+
+    const history = useHistory();
+
+    const user = useSelector(selectUser);
+
+    const goToFeeds = () => {
+        history.push("/feeds")
+    }
 
     const toggle = () => {
         var blur = document.getElementById("blur");
@@ -19,9 +30,17 @@ function LandingPage() {
                 <div className="lp_nav_left">
                     <p>Scholarlys</p>
                 </div>
-                <div className="lp_nav_right">
-                    <button onClick={toggle}>Log In</button>
-                </div>
+                {(!user) ? 
+                    (
+                        <div className="lp_nav_right">
+                            <button onClick={toggle}>Log In</button>
+                        </div>
+                    ) :
+                        <div className="lp_nav_right">
+                            <button onClick={goToFeeds}>Go To Feeds</button>
+                        </div> 
+                    }
+                
             </div>
             <div className="landingp" id="blur">
             <div className="lp_title">

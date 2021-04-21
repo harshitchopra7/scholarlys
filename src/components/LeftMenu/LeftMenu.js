@@ -29,8 +29,8 @@ function LeftMenu() {
 		auth.signOut().then(()=>{
 			dispatch(logout())
 		})
-        alert("Logged out");
         history.push("/");
+        alert("Logged out");
 	}
 
     const [keyword, setKeyword] = useState([]);

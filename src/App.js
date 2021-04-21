@@ -31,57 +31,61 @@ function App() {
   }, [])
 
   return (
-    
-      <Router>
 
-        {(!user) ? (
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-        )
-          : (
-            <div className="App">
-              <Route path="/no-keywords">
-                <Navbar />
-                <div className="align">
-                  <NoKeywords />
-                  <Meme />
-                </div>
-              </Route>
+    <Router>
 
-              <Route path="/feeds">
-                <Navbar />
-                <div className="align">
-                  <LeftMenu />
-                  <Feed />
-                  <Meme />
-                </div>
-              </Route>
+      {(!user) ? (
+        <Route exact path="/">
+          <LandingPage />
+        </Route>
+      )
+        : (
+          <div className="App">
+            <Route exact path="/">
+              <LandingPage />
+            </Route>
 
-              <Route path="/bookmarks">
-                <Navbar />
-                <div className="align">
-                  <LeftMenu />
-                  <Bookmarks />
-                  <Meme />
-                </div>
-              </Route>
-
-              <Route path="/content">
-                <Navbar />
-                <div className="align">
-                  <LeftMenu />
-                  <Content />
-                  <Meme />
-                </div>
-              </Route>
+            <Route path="/no-keywords">
+              <Navbar />
+              <div className="align">
+                <NoKeywords />
+                <Meme />
               </div>
-           )
-          
-         }
+            </Route>
 
-      </Router>
-    
+            <Route path="/feeds">
+              <Navbar />
+              <div className="align">
+                <LeftMenu />
+                <Feed />
+                <Meme />
+              </div>
+            </Route>
+
+            <Route path="/bookmarks">
+              <Navbar />
+              <div className="align">
+                <LeftMenu />
+                <Bookmarks />
+                <Meme />
+              </div>
+            </Route>
+
+            <Route path="/content">
+              <Navbar />
+              <div className="align">
+                <LeftMenu />
+                <Content />
+                <Meme />
+              </div>
+            </Route>
+          </div>
+        )
+
+      }
+
+    </Router>
+
   );
 }
 
