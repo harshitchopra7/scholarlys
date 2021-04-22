@@ -18,3 +18,12 @@
 .af_right:hover {
     cursor: pointer;
 }
+.option_pp {
+    margin-left: 9px;
+}
+.optionn {
+    display: flex;
+    margin-left: -4px;
+    margin-top: 7px;
+    color: black;
+}

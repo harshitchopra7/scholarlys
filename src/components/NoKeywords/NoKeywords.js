@@ -61,10 +61,10 @@ function NoKeywords() {
                 {/* <p className="foote">@2021 Scholarlys</p>
             </div> */}
             <div className="nokeywords">
-                <p>Create your first feed and add your search interests </p>
-                <button>
-                    <ArrowBackIcon /> Click on create Feed
-                </button>
+                <p>Create your first feed and add your research interests </p>
+                <p className="divert_cf">
+                    <ArrowBackIcon /> Click on Create Feed
+                </p>
             </div>
 
             

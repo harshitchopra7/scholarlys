@@ -3,6 +3,7 @@ import './AddedFeeds.css';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import EditIcon from '@material-ui/icons/Edit';
 import { useHistory } from 'react-router-dom';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 function AddedFeeds({feed, feedUrl}) {
 
@@ -14,16 +15,16 @@ function AddedFeeds({feed, feedUrl}) {
 
     return (
         <div onClick={openFeed} className="added_feeds">
-            <div className="option af_left">
+            <div className="optionn">
                 <div>
-                    <MenuBookIcon style={{ color: '#012169' }} />
+                    <ArrowForwardIosIcon style={{color: '#6666ff'}} />
                 </div>
-                <div className="option_p">
+                <div className="option_pp">
                     <p>{feed}</p>
                 </div>
             </div>
             <div className="af_right">
-                <EditIcon style={{ color: '#012169' }} />
+                <EditIcon style={{ color: '#6666ff', marginLeft: '10px' }} />
             </div>
         </div>
     );

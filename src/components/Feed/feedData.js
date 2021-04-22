@@ -1,7 +1,7 @@
 export const feedData = [
     {
         id: 1,
-        title: 'Structural similarity, synthesis, and adsorption properties of aluminuim-based metal-organic frameworks',
+        title: 'Structural similarity, synthesis, and adsorption properties of aluminuim-based metal-organic frameworks Structural similarity, synthesis, and adsorption properties of aluminuim-based metal-organic frameworks',
         keyword: 'Adsorption'
     },
     {

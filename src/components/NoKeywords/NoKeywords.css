@@ -9,7 +9,7 @@
 .nokeywords > p {
     font-size: 20px;
 }
-.nokeywords > button {
+.divert_cf {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@
     padding: 4px 10px;
     cursor: pointer;
     color: white;
-    background-color: #318ce7;
+    color: #318ce7;
     outline: none;
     border: none;
     border-radius: 7px;
@@ -101,6 +101,10 @@
     border: none;
     border-radius: 7px;
 }
+/* .input_key {
+    margin-top: 40px;
+    background-color: violet;
+} */
 .input_key > button:hover {
     font-size: 16px;
 }

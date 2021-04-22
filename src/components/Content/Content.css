@@ -13,6 +13,9 @@
     font-weight: 500;
     margin: 10px 0;
 }
+.c_body {
+    line-height: 28px;
+}
 .c_btn {
     display: flex;
     justify-content: center;
@@ -21,6 +24,13 @@
 }
 .c_btn > button {
     font-size: 16px;
+    padding: 4px 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #318ce7;
+    outline: none;
+    border: none;
+    border-radius: 7px;
 }
 .c_btn > button:hover {
     cursor: pointer;

@@ -119,10 +119,11 @@ function LeftMenu() {
                     <Avatar src={user.photoURL} style={{ width: '100px', height: '100px' }} />
                     <p>{user.displayName}</p>
                 </div>
-
-                {feed.map(({id, feed}) => (
-                    <AddedFeeds id={id} feed={feed} feedUrl="/feeds" />
-                ))}
+                <div className="menu_optionss">
+                    {feed.map(({id, feed}) => (
+                        <AddedFeeds id={id} feed={feed} feedUrl="/feeds" />
+                    ))}
+                </div>
                 
                 {/* <Link className="text_decoration" to="/feeds">
                     
@@ -132,7 +133,7 @@ function LeftMenu() {
                 <div className="menu_options">
                     <div className="option" onClick={toggler}>
                         <div>
-                            <AddCircleOutlineIcon style={{color: '#012169'}} />
+                            <AddCircleOutlineIcon style={{color: '#6666ff'}} />
                         </div>
                         <div className="option_p">
                             <p> Create Feed</p>
@@ -142,7 +143,7 @@ function LeftMenu() {
                     <Link className="text_decoration" to="/bookmarks">
                         <div className="option">
                             <div>
-                                <BookmarkBorderIcon style={{color: '#012169'}} />
+                                <BookmarkBorderIcon style={{color: '#6666ff'}} />
                             </div>
                             <div className="option_p">
                                 <p> Bookmarks</p>
@@ -152,7 +153,7 @@ function LeftMenu() {
 
                     <div onClick={signOut} className="option">
                         <div>
-                            <ExitToAppIcon style={{color: '#012169'}} />
+                            <ExitToAppIcon style={{color: '#6666ff'}} />
                         </div>
                         <div className="option_p">
                             <p> Logout</p>
@@ -184,10 +185,11 @@ function LeftMenu() {
                             value={input}
                             onChange={event => setInput(event.target.value)}
                         />
-                        <button onClick={addKeyword}>Add Keyword</button>
+                        <AddCircleOutlineIcon onClick={addKeyword} style={{marginLeft: '20px', cursor: 'pointer', color: '#318ce7'}} />
+                        {/* <button onClick={addKeyword}>Add</button> */}
                     </div>
                 </div>
-                <div>
+                <div className="keyword_added_main">
                     <div className="keyword_added">
                         {keyword.map(({id, keyword}) => (
                             <AddedKeyword id={id} keyword={keyword} />

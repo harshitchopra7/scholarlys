@@ -42,18 +42,22 @@ function LandingPage() {
                     }
                 
             </div>
+            <hr className="nav_hr" />
             <div className="landingp" id="blur">
             <div className="lp_title">
                 <div className="lp_title1">
                     <p>Keep up with research, everything in one place</p>
                 </div>
                 <div className="lp_title2">
-                    <p>Say goodbye to email alerts. Get an organized daily feed of the latest research papers, science news, blogs and events.</p>
+                    <p>Say goodbye to email alerts. Get an organized daily feed of the latest research papers, <br /> science news, blogs and events.</p>
                 </div>
             </div>
             <div className="vid">
                 <div className="vid_left">
                     <video src={vid2} autoPlay="true" type="video/mp4" muted loop />
+                </div>
+                <div className="arrow_bw">
+                    <img src="https://img.icons8.com/ios/52/000000/forward-arrow.png"/>
                 </div>
                 <div className="vid_right">
                     <video src={vid1} autoPlay="true" type="video/mp4" muted loop />

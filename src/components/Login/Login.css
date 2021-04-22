@@ -14,15 +14,16 @@
     width: 250px;
     background-color: white;
     outline: none;
-    border-radius: 25px;
+    border-radius: 10px;
     font-size: 20px;
     border: 0.5px solid grey;
     text-decoration: none;
-    padding: 4px 5px;
+    padding: 7px 5px;
     text-align: center;
     cursor: pointer;
     font-weight: 600;
     color: #318ce7;
+    box-shadow: 1px 1px 2px 2px lightgray;
 }
 .lg_button:hover {
     font-size: 21px ;
