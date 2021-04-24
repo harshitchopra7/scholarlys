@@ -4,6 +4,7 @@
     top: 0;
     z-index: 1;
     background-color: white;
+    align-items: left !important;
 }
 .hr {
     border: 1px solid lightgray;

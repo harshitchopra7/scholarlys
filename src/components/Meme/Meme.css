@@ -1,6 +1,6 @@
 .meme {
     position: fixed;
-    margin-left: 1020px;
+    /* margin-left: 1020px; */
     margin-top: 10px;
 }
 .meme > p {

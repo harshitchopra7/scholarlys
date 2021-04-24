@@ -56,27 +56,45 @@ function App() {
             <Route path="/feeds">
               <Navbar />
               <div className="align">
-                <LeftMenu />
-                <Feed />
-                <Meme />
+                <div className="main_left">
+                  <LeftMenu />
+                </div>
+                <div className="main_mid">
+                  <Feed />
+                </div>
+                <div className="main_right">
+                  <Meme />
+                </div>
               </div>
             </Route>
 
             <Route path="/bookmarks">
               <Navbar />
               <div className="align">
-                <LeftMenu />
-                <Bookmarks />
-                <Meme />
+                <div className="main_left">
+                  <LeftMenu />
+                </div>
+                <div className="main_mid">
+                  <Bookmarks />
+                </div>
+                <div className="main_right">
+                  <Meme />
+                </div>
               </div>
             </Route>
 
             <Route path="/content">
               <Navbar />
               <div className="align">
-                <LeftMenu />
-                <Content />
-                <Meme />
+                <div className="main_left">
+                  <LeftMenu />
+                </div>
+                <div className="main_mid">
+                  <Content />
+                </div>
+                <div className="main_right">
+                  <Meme />
+                </div>
               </div>
             </Route>
           </div>

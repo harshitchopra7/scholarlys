@@ -57,20 +57,26 @@
     margin-top: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .vid_left {
-    flex: 0.4;
+    flex: 0.3;
 }
 
 .vid_right {
     flex: 0.6;
 }
+.arrow_bw {
+    flex-direction: 0.1;
+    padding-right: 20px;
+}
 .vid_left > video {
-    width: 300px;
+    width: 80%;
 }
 .vid_right > video {
-    width: 700px;
+    /* width: 700px; */
     /* border-bottom: 1px solid black; */
+    width: 100%;
 }
 .lp_btn {
     display: flex;
@@ -95,6 +101,7 @@
     text-align: center;
     margin: 20px 0;
 }
+
 
 /* Popup css start*/
 #popup {

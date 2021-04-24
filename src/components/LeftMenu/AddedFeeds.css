@@ -27,3 +27,120 @@
     margin-top: 7px;
     color: black;
 }
+/* Popup Css */
+/* Popup css start*/
+#popupppp {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 450px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.30);
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    padding: 20px;
+}
+#popupppp.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+}
+.leftmenu#blurrr.active {
+    filter: blur(4px);
+    pointer-events: none;
+    user-select: none;
+}
+.cross_mainnnn {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+}
+.crosssss {
+    cursor: pointer;
+    font-size: 30px;
+    margin-left: auto;
+}
+.welcome_mainnnn {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.welcomeee {
+    font-size: 32px;
+}
+.login_googleee {
+    margin-top: 50px;
+}
+.inputsss {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.input_fff {
+    width: 400px;
+    font-size: 16px;
+    padding: 8px 5px;
+    border-radius: 8px;
+    border: 1px solid gray;
+}
+.input_kkk {
+    width: 400px;
+    margin: 20px 0;
+    font-size: 16px; 
+    padding: 8px 5px;
+    border-radius: 8px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid gray;
+}
+.input_keyyy {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+}
+.del_upd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input_keyyy > button {
+    margin-left: 20px;
+    font-size: 15px;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #318ce7;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+}
+.input_keyyy > button:hover {
+    font-size: 16px;
+}
+.no_addfeeddd {
+    display: flex;
+    margin-top: 70px;
+    justify-content: center;
+}
+.no_addfeeddd > button {
+    margin-left: 20px;
+    font-size: 20px;
+    padding: 4px 10px;
+    cursor: pointer;
+    color: white;
+    background-color: #318ce7;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.no_addfeeddd > button:hover {
+    font-size: 21px;
+}

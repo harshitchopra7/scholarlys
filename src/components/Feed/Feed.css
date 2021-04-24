@@ -1,8 +1,9 @@
 .feed {
     margin-top: 10px;
     margin-bottom: 20px;
-    margin-left: 330px;
-    width: 670px;
+    /* margin-left: 330px; */
+    /* width: 670px; */
+    width: 100%;
 }
 .most_rel {
     font-size: 18px;
