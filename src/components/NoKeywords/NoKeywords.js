@@ -19,11 +19,14 @@ function NoKeywords() {
 
     return (
         <div>
-        <div className="no_full" id="blurr">
+            <div className="no_full align_nok" id="blurr">
 
-            <LeftMenu />
+                <div className="no_left">
+                    <LeftMenu />
+                </div>
 
-            {/* <div className="leftmenu"> */}
+
+                {/* <div className="leftmenu"> */}
                 {/* <div className="menu_top">
                     <Avatar src='' style={{ width: '100px', height: '100px' }} />
                     <p>Harshit Chopra</p>
@@ -60,18 +63,18 @@ function NoKeywords() {
                 </div> */}
                 {/* <p className="foote">@2021 Scholarlys</p>
             </div> */}
-            <div className="nokeywords">
-                <p>Create your first feed and add your research interests </p>
-                <p className="divert_cf">
-                    <ArrowBackIcon /> Click on Create Feed
-                </p>
+                <div className="nokeywords">
+                    <p>Create your first feed and add your research interests </p>
+                    <p className="divert_cf">
+                        <ArrowBackIcon /> Click on Create Feed
+                    </p>
+                </div>
+
+
+
             </div>
-
-            
-
-        </div>
-        {/* Login Pop goes here  */}
-        <div id="popupp">
+            {/* Login Pop goes here  */}
+            <div id="popupp">
                 <div className="cross_mainn">
                     <p>Create Feed</p>
                     <p className="crosss" onClick={toggler}>

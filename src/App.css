@@ -1,6 +1,5 @@
 .align {
     display: flex;
-    justify-content: center;
     margin: 0 10%;
     justify-content: center;
 }
@@ -9,6 +8,9 @@
 }
 .main_mid {
     flex: 0.7;
+}
+.main_mid_left {
+    flex: 0.8;
 }
 .main_right {
     flex: 0.2;

@@ -48,8 +48,12 @@ function App() {
             <Route path="/no-keywords">
               <Navbar />
               <div className="align">
-                <NoKeywords />
-                <Meme />
+                <div className="main_mid_left">
+                  <NoKeywords />
+                </div>
+                <div className="main_right">
+                  <Meme />
+                </div>
               </div>
             </Route>
 

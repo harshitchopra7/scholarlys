@@ -6,7 +6,6 @@ import { topData } from '../Feed/topData';
 function Bookmarks() {
     return (
         <div className="feed">
-            <div>
                 <div className="most_rel">
                     <p>Bookmarks</p>
                 </div>
@@ -15,7 +14,6 @@ function Bookmarks() {
                         <SingleFeed title={topData.title} keyword={topData.keyword} />
                     ))}
                 </div>
-            </div>
         </div>
     )
 }
