@@ -1,7 +1,5 @@
 .landingpage {
     padding: 0 10%;
-    background-color: #fffafa;
-
 }
 .lp_nav {
     display: flex;
@@ -39,6 +37,7 @@
 }
 .lp_title1 > p {
     /* font-size: 40px; */
+    margin-top: 20px;
     font-weight: 700;
     font-size: 36px;
     /* font-family: "AvenirNext-DemiBold", serif; */
@@ -65,6 +64,7 @@
 
 .vid_right {
     flex: 0.6;
+    margin-top: 20px;
 }
 .arrow_bw {
     flex-direction: 0.1;
@@ -158,4 +158,45 @@
 .foot {
     text-align: center;
     margin-top: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .lp_nav_left {
+        font-size: 40px
+      
+    }
+    .lp_nav_right > button {
+        font-size: 22px;
+    }
+    .lp_nav_right > button:hover {
+        font-size: 23px;
+    }
+    .lp_title1 > p {
+        font-size: 40px;
+    }
+    .lp_title2 > p {
+        font-size: 24px;      
+    }
+    .vid {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .vid_right {
+        flex: 1;
+        margin-top: 20px;
+    }
+    .vid_right > video {
+        /* width: 700px; */
+        /* border-bottom: 1px solid black; */
+        width: 100%;
+    }
+    .lp_btn > button {
+        font-size: 22px;
+    }
+    .lp_btn > button:hover {
+        font-size: 23px;
+    }
+    
 }

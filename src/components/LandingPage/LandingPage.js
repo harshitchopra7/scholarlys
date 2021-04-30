@@ -46,19 +46,21 @@ function LandingPage() {
             <div className="landingp" id="blur">
             <div className="lp_title">
                 <div className="lp_title1">
-                    <p>Keep up with research, everything in one place</p>
+                    <p>Keep up with research</p>
+                    {/* <p>Keep up with research, everything in one place</p> */}
                 </div>
                 <div className="lp_title2">
-                    <p>Say goodbye to email alerts. Get an organized daily feed of the latest research papers, <br /> science news, blogs and events.</p>
+                    <p>Get latest publications, research news, blog posts and more. Everything in one place.</p>
+                    {/* <p>Say goodbye to email alerts. Get an organized daily feed of the latest research papers, <br /> science news, blogs and events.</p> */}
                 </div>
             </div>
             <div className="vid">
-                <div className="vid_left">
+                {/* <div className="vid_left">
                     <video src={vid2} autoPlay="true" type="video/mp4" muted loop />
                 </div>
                 <div className="arrow_bw">
                     <img src="https://img.icons8.com/ios/52/000000/forward-arrow.png"/>
-                </div>
+                </div> */}
                 <div className="vid_right">
                     <video src={vid1} autoPlay="true" type="video/mp4" muted loop />
                 </div>

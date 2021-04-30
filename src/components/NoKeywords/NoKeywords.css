@@ -1,5 +1,6 @@
 .align_nok {
     display: flex;
+    background-color: #fff;
 }
 .no_left {
     flex: 0.2;

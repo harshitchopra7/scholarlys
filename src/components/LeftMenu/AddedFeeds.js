@@ -66,13 +66,13 @@ function AddedFeeds({ feed, feedUrl }) {
                         {/* <button onClick={addKeyword}>Add</button> */}
                     </div>
                 </div>
-                {/* <div className="keyword_added_main">
-                    <div className="keyword_added">
+                <div className="keyword_added_main">
+                    {/* <div className="keyword_added">
                         {keyword.map(({id, keyword}) => (
                             <AddedKeyword id={id} keyword={keyword} />
                         ))}
-                    </div>
-                </div> */}
+                    </div> */}
+                </div>
 
                
                     <div className="no_addfeeddd">
